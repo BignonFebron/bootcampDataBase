@@ -57,22 +57,6 @@ public class Commune implements Serializable {
     @Transient
     private Link self;
 
-    public Commune() {
-    }
-
-    public Commune(int id, String nom, double longitude, double latitude) {
-        this.id = id;
-        this.nom = nom;
-        this.longitude = longitude;
-        this.latitude = latitude;
-    }
-
-    public Commune(String nom, double longitude, double latitude) {
-        this.nom = nom;
-        this.longitude = longitude;
-        this.latitude = latitude;
-    }
-
     public int getId() {
         return id;
     }

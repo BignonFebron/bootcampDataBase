@@ -62,17 +62,6 @@ public class Departement implements Serializable {
     @Transient
     private Link self;
 
-    public Departement() {
-    }
-
-    public Departement(int id, String nom, int numero, double longitude, double latitude) {
-        this.id = id;
-        this.nom = nom;
-        this.numero = numero;
-        this.longitude = longitude;
-        this.latitude = latitude;
-    }
-
     public Departement(String nom, int numero, double longitude, double latitude) {
         this.nom = nom;
         this.numero = numero;

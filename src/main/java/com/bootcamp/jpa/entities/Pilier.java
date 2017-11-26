@@ -56,12 +56,6 @@ public class Pilier implements Serializable {
     @Column(nullable = false)
     private List<Axe> listaxes;
     
-
-    //contructeur with name in parameter
-    public Pilier(String name) {
-        this.name = name;
-    }
-
     public Long getId() {
         return id;
     }

@@ -59,9 +59,6 @@ public class Projet implements Serializable{
     
     private EtatProjet etat=EtatProjet.pre_etude ;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "projet")
-    List<Impact> impacts = new ArrayList<Impact>();
-    
     private List<Integer> commentaires = new ArrayList<Integer>();
     
     private List<Integer> geographies = new ArrayList<Integer>();
@@ -160,15 +157,6 @@ public class Projet implements Serializable{
 
     public void setEtat(EtatProjet etat) {
         this.etat = etat;
-    }
-
-
-    public List<Impact> getImpacts() {
-        return impacts;
-    }
-
-    public void setImpacts(List<Impact> impacts) {
-        this.impacts = impacts;
     }
 
     public int getIdIndicateur() {

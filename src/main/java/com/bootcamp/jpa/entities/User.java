@@ -23,11 +23,6 @@ public class User {
     private Timestamp createAt;
     private Timestamp updateAt;
 
-    public User() {
-        this.createAt = Timestamp.valueOf(LocalDateTime.now());
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
-    }
-
     public int getId() {
         return id;
     }

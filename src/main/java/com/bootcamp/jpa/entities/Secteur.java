@@ -73,23 +73,6 @@ public class Secteur implements Serializable {
     @JoinColumn(name = "axe", referencedColumnName = "id", insertable = false, updatable = false)
     private Axe axe;
 
-    @Transient
-    private Link self;
-
-    public Secteur() {
-    }
-
-    public Secteur(String nom, String description, String objectif, Timestamp create, Timestamp update, List<Integer> projets, List<Integer> medias, List<Integer> commentaires) {
-        this.nom = nom;
-        this.description = description;
-        this.objectif = objectif;
-        this.createAt = create;
-        this.updateAt = update;
-        this.projets = projets;
-        this.medias = medias;
-        this.commentaires = commentaires;
-    }
-
     public int getId() {
         return id;
     }
@@ -144,14 +127,6 @@ public class Secteur implements Serializable {
 
     public void setCommentaires(List<Integer> commentaires) {
         this.commentaires = commentaires;
-    }
-
-    public Link getSelf() {
-        return self;
-    }
-
-    public void setSelf(Link self) {
-        this.self = self;
     }
 
     public List<Integer> getMedias() {
