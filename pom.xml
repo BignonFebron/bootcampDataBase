@@ -50,12 +50,6 @@
             <version>2.1</version>
             <!--<type>jar</type>-->
         </dependency>
-        <dependency>
-            <groupId>com.bootcamp</groupId>
-            <artifactId>bootannotation</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>jar</type>
-        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

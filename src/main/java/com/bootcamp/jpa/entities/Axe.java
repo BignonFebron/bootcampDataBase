@@ -1,6 +1,5 @@
 package com.bootcamp.jpa.entities;
 
-import com.bootcamp.database.annotations.NativeQueryResultColumn;
 import io.swagger.annotations.*;
 import java.io.Serializable;
 import java.util.List;
@@ -19,27 +18,22 @@ public class Axe implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @NotNull(message = "The name field must not be empty")
     @Column(nullable = false, length = 255)
     @ApiModelProperty(value = "name of Axe", required = true)
     private String name;
     
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @NotNull(message = "The description field must not be empty")
     @Column(nullable = false, length = 255)
     @ApiModelProperty(value = "description of Axe", required = true)
     private String description;
     
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @ApiModelProperty(value = "creation date of Axe")
     private Timestamp createAt;
     
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @ApiModelProperty(value = "update date of Axe")
     private Timestamp updateAt;
     
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @NotNull(message = "The focus field must not be empty")
     @Column(nullable = false)
     @ApiModelProperty(value = "focus of Axe", required = true)
@@ -47,7 +41,6 @@ public class Axe implements Serializable {
     
     @OneToMany
     @NotNull(message = "The list of sectors field must not be empty")
-    @Column(nullable = false)
     @ApiModelProperty(value = "list of sectors of Axe", required = true)
     private List<Secteur> listSecteurs;
     

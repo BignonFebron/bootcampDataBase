@@ -1,6 +1,5 @@
 package com.bootcamp.jpa.entities;
 
-import com.bootcamp.database.annotations.NativeQueryResultColumn;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,50 +16,41 @@ public class Pilier implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(value="Id of pilier' Model",notes = "This id is automatically generated ,it doesn't required")
-    private Long id;
+    private int id;
 
     @Column
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @ApiModelProperty(value="the name of this particular pilier",notes ="this name is required during the creation of a pilier",required = true)
     private String name;
 
     @Column
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @ApiModelProperty(value="the description of the pilar",notes="the description is not obligatory but necessary",required = false)
     private String description;
 
     @Column
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @ApiModelProperty(value="the date of creation of this particular pilar")
     private Timestamp createAt;
 
     @Column
-    @NativeQueryResultColumn(columnType = NativeQueryResultColumn.COLUMNTYPE.SIMPLE)
     @ApiModelProperty(value="the updated date",notes="the date when this pilar has been modified at last")
     private Timestamp updateAt;
 
     @Column
-    @ApiModelProperty(value="the axe list",notes="the id list of the axes in this pilar ")
-    private List<Long> axes;
-
-    @Column
     @ApiModelProperty(value="comments list",notes = "the list of all comments related to this pilar")
-    private List<Long> comments;
+    private List<Integer> comments;
 
     @Column
     @ApiModelProperty(value="media list",notes = "the list of all media  related to this pilar")
-    private List<Long> medias;
+    private List<Integer> medias;
     
     @OneToMany
     @NotNull(message = "The list of axes field must not be empty")
-    @Column(nullable = false)
-    private List<Axe> listaxes;
+    private List<Axe> listAxes;
     
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -96,41 +86,33 @@ public class Pilier implements Serializable {
         this.updateAt = updateAt;
     }
 
-    public List<Long> getAxes() {
-        return axes;
-    }
-
-    public void setAxes(List<Long> axes) {
-        this.axes = axes;
-    }
-
-    public List<Long> getComments() {
+    public List<Integer> getComments() {
         return comments;
     }
 
-    public void setComments(List<Long> comments) {
+    public void setComments(List<Integer> comments) {
         this.comments = comments;
     }
 
-    public List<Long> getMedias() {
+    public List<Integer> getMedias() {
         return medias;
     }
 
-    public void setMedias(List<Long> medias) {
+    public void setMedias(List<Integer> medias) {
         this.medias = medias;
     }
 
     /**
-     * @return the listaxes
+     * @return the listAxes
      */
     public List<Axe> getListaxes() {
-        return listaxes;
+        return listAxes;
     }
 
     /**
-     * @param listaxes the listaxes to set
+     * @param listAxes the listAxes to set
      */
-    public void setListaxes(List<Axe> listaxes) {
-        this.listaxes = listaxes;
+    public void setListaxes(List<Axe> listAxes) {
+        this.listAxes = listAxes;
     }
 }
